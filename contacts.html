@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Контакты | Rave by Vento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Яндекс.Карты API -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш-api-ключ&lang=ru_RU" type="text/javascript"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="bg-noise"></div>
+
+<div class="container">
+  <div class="navbar">
+    <div class="logo"><span>RAVE</span><span>by VENTO</span></div>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="booking.html">Бронирование</a>
+      <a href="tournaments.html">Турниры</a>
+      <a href="contacts.html" class="active-nav">Контакты</a>
+      <a href="booking.html" class="btn-outline">Забронировать</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><i class="fas fa-address-card"></i> Контакты</div>
+    <div class="contacts-wrapper">
+      <div class="contacts-info">
+        <p><i class="fas fa-location-dot"></i> <strong>Альметьевск, ул. Ленина 100</strong><br>ТРЦ Панорама, 2 этаж — Rave Arena</p>
+        <p><i class="fas fa-phone-alt"></i> +7 (855) 777-33-22</p>
+        <p><i class="fab fa-whatsapp"></i> WhatsApp / Telegram: +7 (855) 777-33-22</p>
+        <p><i class="fas fa-envelope"></i> rave@vento.ru</p>
+        <div class="work-hours"><i class="fas fa-clock"></i> <strong>Режим работы:</strong><br>🟢 Круглосуточно, без выходных<br>🟢 Бронь онлайн 24/7</div>
+        <div class="social-links"><i class="fab fa-vk"></i><i class="fab fa-telegram"></i><i class="fab fa-discord"></i><i class="fab fa-twitch"></i><i class="fab fa-tiktok"></i></div>
+      </div>
+      <div class="map-container"><div id="yandexMap"></div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2026 Rave by Vento — киберспортивный клуб в Альметьевске</div>
+    <div>#RaveCommunity <i class="fas fa-crown" style="color:#b5ff4e;"></i></div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+<script>
+  let mapInitialized = false;
+  
+  window.initMap = function() {
+    if (mapInitialized) return;
+    const mapContainer = document.getElementById('yandexMap');
+    if (!mapContainer) return;
+    try {
+      const myMap = new ymaps.Map('yandexMap', { center: [54.9017, 52.2985], zoom: 17, controls: ['zoomControl', 'fullscreenControl'] });
+      const computerIcon = ymaps.templateLayoutFactory.createClass('<div style="position: relative;"><i class="fas fa-desktop" style="font-size: 42px; color: #b5ff4e; text-shadow: 0 0 10px rgba(181,255,78,0.5); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"></i><div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; background: #b5ff4e; border-radius: 50%; box-shadow: 0 0 8px #b5ff4e;"></div></div>', { build: function() { this.constructor.superclass.build.call(this); this._element.querySelector('i').style.display = 'block'; } });
+      const placemark = new ymaps.Placemark([54.9017, 52.2985], { balloonContentHeader: '<b>🎮 Rave by Vento</b>', balloonContentBody: 'Киберспорт-клуб<br>📍 ТРЦ Панорама, ул. Ленина 100, 2 этаж<br>☎ +7 (855) 777-33-22<br>🕒 Круглосуточно', hintContent: 'Rave by Vento' }, { iconLayout: computerIcon });
+      myMap.geoObjects.add(placemark);
+      mapInitialized = true;
+    } catch(e) { console.log('Карта загружается...'); }
+  };
+  
+  function loadYandexMap() { 
+    if (typeof ymaps !== 'undefined') ymaps.ready(() => { window.initMap(); }); 
+    else setTimeout(loadYandexMap, 500); 
+  }
+  
+  loadYandexMap();
+</script>
+</body>
+</html>

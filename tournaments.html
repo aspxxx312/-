@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Турниры | Rave by Vento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="bg-noise"></div>
+
+<div class="container">
+  <div class="navbar">
+    <div class="logo"><span>RAVE</span><span>by VENTO</span></div>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="booking.html">Бронирование</a>
+      <a href="tournaments.html" class="active-nav">Турниры</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="booking.html" class="btn-outline">Забронировать</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><i class="fas fa-trophy"></i> Актуальные турниры Rave by Vento</div>
+    <div class="tournaments">
+      <div class="tournament-item" data-tourney="CS2 Rave Open Cup" data-date="20-22 Апреля 2026" data-format="5v5" data-prize="85 000₽" data-location="Rave Arena" data-desc="Открытый турнир по CS2 для всех желающих. Регистрация команд до 18 апреля. Формат bo3, финал bo5. Призовой фонд 85 000 рублей">
+        <div class="tournament-info"><h4><img src="img/cs.png" width="25">CS2 Rave Open Cup</h4><p>5v5 • Призовой фонд 85 000₽</p></div>
+        <div class="tournament-date">20-22 Апреля 2026</div>
+        <button class="register-tourney">Подробнее</button>
+      </div>
+      
+      <div class="tournament-item" data-tourney="Dota 2: Vento Clash" data-date="27 Апреля 2026" data-format="5v5 лига" data-prize="50 000₽ + игровые девайсы" data-location="Rave Arena + онлайн" data-desc="Еженедельная лига Dota 2. Участвуют 8 команд. Топ-3 получают призы. Регистрация до 24 апреля. Матчи транслируются на большом экране.">
+        <div class="tournament-info"><h4><img src="img/dota" width="25">Dota 2: Vento Clash</h4><p>Еженедельная лига, призы для топ-3 команд</p></div>
+        <div class="tournament-date">27 Апреля 2026</div>
+        <button class="register-tourney">Подробнее</button>
+      </div>
+      
+      <div class="tournament-item" data-tourney="Valorant: Rave Evolution" data-date="3-4 Мая 2026" data-format="5v5" data-prize="Игровая станция + 30 000₽" data-location="Rave Arena" data-desc="Любительский турнир по Valorant с онлайн-трансляцией. Главный приз — мощный игровой ПК и 30 000 рублей. Участвуют до 16 команд. Регистрация до 1 мая.">
+        <div class="tournament-info"><h4><img src="img/valorant" width="25">Valorant: Rave Evolution</h4><p>Любительский турнир с онлайн-трансляцией</p></div>
+        <div class="tournament-date">3-4 Мая 2026</div>
+        <button class="register-tourney">Подробнее</button>
+      </div>
+      
+      <div class="tournament-item" data-tourney="FIFA / eFootball Showdown" data-date="10 Мая 2026" data-format="1v1" data-prize="25 000₽ + геймпады DualSense" data-location="PS Area, Rave Arena" data-desc="Соревнования на PlayStation 5. Вход бесплатный для участников клуба. Формат плей-офф. Победитель получает 25 000 рублей и геймпады DualSense.">
+        <div class="tournament-info"><h4>⚽ FIFA / eFootball Showdown</h4><p>Соревнования на PS5, 1v1, вход бесплатный</p></div>
+        <div class="tournament-date">10 Мая 2026</div>
+        <button class="register-tourney">Подробнее</button>
+      </div>
+      
+      <div class="tournament-item" data-tourney="Apex Legends: Rave Rush" data-date="17 Мая 2026" data-format="3v3 (отряды)" data-prize="40 000₽ + игровая периферия" data-location="Rave Arena" data-desc="Королевская битва в формате 3x3. Участвуют до 20 отрядов. Режим — пользовательские лобби. Призовой фонд 40 000 рублей и игровая периферия от HyperX. Регистрация команд до 14 мая.">
+        <div class="tournament-info"><h4><img src="img/apex" width="25">Apex Legends: Rave Rush</h4><p>3v3 отряды • Призовой фонд 40 000₽ + периферия</p></div>
+        <div class="tournament-date">17 Мая 2026</div>
+        <button class="register-tourney">Подробнее</button>
+      </div>
+      
+      <div class="tournament-item" data-tourney="LoL: Rave Rift Masters" data-date="24 Мая 2026" data-format="5v5" data-prize="60 000₽ + RP и скины" data-location="Rave Arena" data-desc="Турнир по League of Legends для любителей и полупрофессионалов. Формат bo1 групповой этап, плей-офф bo3. Призовой фонд 60 000 рублей, а также RP и эксклюзивные скины. Регистрация до 20 мая.">
+        <div class="tournament-info"><h4> <img src="img/lol" width="25">LoL: Rave Rift Masters</h4><p>5v5 • Призовой фонд 60 000₽ + RP и скины</p></div>
+        <div class="tournament-date">24 Мая 2026</div>
+        <button class="register-tourney">Подробнее</button>
+      </div>
+    </div>
+    
+    <div style="margin-top: 30px; text-align: center; padding: 20px; background: rgba(181,255,78,0.05); border-radius: 40px;">
+      <i class="fas fa-medal"></i> Стань частью киберспортивной лиги Rave! Регистрируй команду или приходи соло — мы подберем тиммейтов.
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2026 Rave by Vento — киберспортивный клуб в Альметьевске</div>
+    <div>#RaveCommunity <i class="fas fa-crown" style="color:#b5ff4e;"></i></div>
+  </footer>
+</div>
+
+<!-- Модальное окно турнира -->
+<div id="tournamentModal" class="modal">
+  <div class="modal-content">
+    <h2 id="tourneyModalTitle">Турнир</h2>
+    <div id="tourneyDetails"></div>
+    <input type="text" id="tourneyPlayerName" placeholder="Ваше имя / никнейм">
+    <input type="tel" id="tourneyPlayerPhone" placeholder="Телефон / Telegram">
+    <input type="text" id="tourneyTeamName" placeholder="Название команды (если есть)">
+    <div class="modal-buttons">
+      <button class="btn-outline close-tourney-modal">Отмена</button>
+      <button class="btn-primary" id="submitTourneyApplication">Подать заявку</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  let currentTourney = null;
+  
+  function openTourneyModal(tourneyData) { 
+    currentTourney = tourneyData; 
+    document.getElementById('tourneyModalTitle').innerHTML = `<i class="fas fa-trophy"></i> ${tourneyData.name}`; 
+    document.getElementById('tourneyDetails').innerHTML = `<p><i class="fas fa-calendar-alt"></i> <strong>Дата:</strong> ${tourneyData.date}</p><p><i class="fas fa-users"></i> <strong>Формат:</strong> ${tourneyData.format}</p><p><i class="fas fa-gift"></i> <strong>Приз:</strong> <span class="prize-badge">${tourneyData.prize}</span></p><p><i class="fas fa-map-marker-alt"></i> <strong>Локация:</strong> ${tourneyData.location}</p><p><i class="fas fa-info-circle"></i> ${tourneyData.desc}</p>`; 
+    document.getElementById('tournamentModal').style.display = 'flex'; 
+  }
+  
+  function closeTourneyModal() { document.getElementById('tournamentModal').style.display = 'none'; }
+  
+  function submitTourneyApplication() { 
+    const name = document.getElementById('tourneyPlayerName').value.trim(); 
+    const phone = document.getElementById('tourneyPlayerPhone').value.trim(); 
+    if (!name || !phone) { alert("Укажите имя и телефон"); return; } 
+    alert(`🏆 Заявка на "${currentTourney.name}" принята! С вами свяжутся организаторы.`); 
+    closeTourneyModal(); 
+  }
+  
+  document.querySelectorAll('.register-tourney').forEach(btn => {
+    btn.addEventListener('click', (e) => { 
+      const parent = btn.closest('.tournament-item'); 
+      if (parent) openTourneyModal({ 
+        name: parent.getAttribute('data-tourney'), 
+        date: parent.getAttribute('data-date'), 
+        format: parent.getAttribute('data-format'), 
+        prize: parent.getAttribute('data-prize'), 
+        location: parent.getAttribute('data-location'), 
+        desc: parent.getAttribute('data-desc') 
+      }); 
+    }); 
+  });
+  
+  document.querySelector('.close-tourney-modal')?.addEventListener('click', closeTourneyModal);
+  window.addEventListener('click', (e) => { if (e.target === document.getElementById('tournamentModal')) closeTourneyModal(); });
+  document.getElementById('submitTourneyApplication')?.addEventListener('click', submitTourneyApplication);
+</script>
+</body>
+</html>

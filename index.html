@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Rave by Vento | Киберспорт-клуб Альметьевск</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="bg-noise"></div>
+
+<div class="container">
+  <div class="navbar">
+    <div class="logo"><span>RAVE</span><span>by VENTO</span></div>
+    <div class="nav-links">
+      <a href="index.html" class="active-nav">Главная</a>
+      <a href="booking.html">Бронирование</a>
+      <a href="tournaments.html">Турниры</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="booking.html" class="btn-outline" id="globalBookBtn">Забронировать</a>
+    </div>
+  </div>
+
+  <!-- ГЛАВНАЯ СТРАНИЦА -->
+  <div class="hero">
+    <div class="hero-text">
+      <div class="badge"><i class="fas fa-gamepad"></i> Альметьевск — энергия киберспорта</div>
+      <h1>Rave by Vento<br> <span style="color:#b5ff4e;">Твой ритм игры</span></h1>
+      <p>Мощнейшие ПК, киберспортивные баталии, VR-погружение и стиль, который задает тренды. Бронируй места, участвуй в турнирах и становись частью сообщества Rave.</p>
+      <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-alt"></i> Забронировать место</a>
+      <div class="hero-stats">
+        <div class="stat"><span>24/7</span>Режим работы</div>
+        <div class="stat"><span>RTX 4080</span>Ультра-настройки</div>
+        <div class="stat"><span>240Гц</span>Кибер-мониторы</div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="img/3.png" alt="Rave by Vento Arena" onerror="this.src='https://placehold.co/600x400?text=Rave+Arena'">
+    </div>
+  </div>
+  
+  <div class="section" style="margin-top: 20px;">
+    <div class="section-title"><i class="fas fa-bolt"></i> Почему выбирают Rave</div>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: space-between;">
+      <div><i class="fas fa-crown" style="color:#b5ff4e;"></i> <strong>Киберспорт-площадка</strong><br>еженедельные турниры</div>
+      <div><i class="fas fa-mug-hot"></i> <strong>Energy Zone</strong><br>напитки и снеки</div>
+      <div><i class="fas fa-wifi"></i> <strong>Wi-Fi 6E</strong><br>игровая сеть без лагов</div>
+    </div>
+  </div>
+
+  <div class="reviews-section">
+    <div class="section-title"><i class="fas fa-star"></i> Отзывы наших гостей</div>
+    <div class="reviews-grid" id="reviewsGrid"></div>
+  </div>
+
+  <footer>
+    <div>© 2026 Rave by Vento — киберспортивный клуб в Альметьевске</div>
+    <div>#RaveCommunity <i class="fas fa-crown" style="color:#b5ff4e;"></i></div>
+  </footer>
+</div>
+
+<!-- Модальное окно для отзывов -->
+<div id="reviewModal" class="review-modal">
+  <div class="review-modal-content">
+    <span class="close-review-modal">&times;</span>
+    <div class="review-modal-header">
+      <div class="review-modal-avatar" id="modalAvatar"></div>
+      <div class="review-modal-user">
+        <h3 id="modalName"></h3>
+        <div id="modalDate" style="opacity:0.6"></div>
+      </div>
+    </div>
+    <div id="modalRating" class="review-modal-rating"></div>
+    <div id="modalText" class="review-modal-text"></div>
+    <div id="modalPlatform" style="opacity:0.6"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  // Отзывы (7 штук)
+  const reviews = [
+    { name: "Артем С.", avatar: "А", date: "15 марта 2026", rating: 5, platform: "2GIS", text: "Лучший киберклуб в Альметьевске! Компьютеры мощные, мониторы 240 Гц — играть одно удовольствие. В VIP-зоне отдельные комнаты, можно не отвлекаться. Персонал вежливый, всегда помогут с настройками. Отдельное спасибо за турниры по CS2 — атмосфера как на настоящем LAN-финале. Обязательно вернусь с командой!" },
+    { name: "Екатерина М.", avatar: "Е", date: "28 февраля 2026", rating: 5, platform: "Яндекс.Карты", text: "Приятно удивлена! Пришли с друзьями отметить день рождения — арендовали Team Room на 5 человек. Очень уютно, есть свой экран для трансляции, диваны мягкие. Цены адекватные, особенно если брать на несколько часов. Кофе вкусный, бариста делает отличный раф. Рекомендую для компании!" },
+    { name: "Даниил К.", avatar: "Д", date: "5 марта 2026", rating: 5, platform: "Google", text: "PS5 зона просто космос! 70-дюймовый телевизор, геймпады новые, никаких задержек. Поиграли в FIFA и Spider-Man — кайф невероятный. Администраторы подсказали, какие игры есть в наличии. Плюс можно заказать доставку еды прямо в зал. Всё супер, теперь постоянный клиент!" },
+    { name: "Максим В.", avatar: "М", date: "20 февраля 2026", rating: 5, platform: "Telegram", text: "Регулярно захожу поиграть после работы. Общий зал с RTX 3060 TI тянет всё на ультрах. Интернет стабильный, пинг в CS2 минимальный. Удобно, что клуб работает 24/7 — можно прийти в любое время. Цены демократичные, для Альметьевска очень достойно. Советую!" },
+    { name: "Алина Р.", avatar: "А", date: "10 января 2026", rating: 4, platform: "2GIS", text: "Ходили с парнем в VR-зону — это нечто! Полное погружение, выбор игр большой, от шутеров до хорроров. Немного тесновато, но впечатления перекрывают всё. Единственное, хотелось бы больше акций для пар. В остальном отлично, вернёмся ещё!" },
+    { name: "Илья Н.", avatar: "И", date: "12 февраля 2026", rating: 5, platform: "Яндекс.Карты", text: "Участвовал в турнире по Dota 2 — организация на высоте! Призовой фонд выдали сразу, трансляция на большом экране, комментатор был. Очень дружелюбная атмосфера, познакомился с ребятами, теперь играем вместе. Rave by Vento — место, где можно не только поиграть, но и найти единомышленников." },
+  ];
+
+  function renderStars(rating) { let stars = ''; for (let i = 1; i <= 5; i++) stars += i <= rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>'; return stars; }
+  
+  function loadReviews() {
+    const container = document.getElementById('reviewsGrid');
+    if (!container) return;
+    container.innerHTML = reviews.map((review, index) => `<div class="review-card" data-review-index="${index}"><div class="review-header"><div class="review-avatar">${review.avatar}</div><div class="review-user"><h4>${review.name}</h4><div class="review-date">${review.date}</div></div></div><div class="review-rating">${renderStars(review.rating)}</div><div class="review-text"><div class="review-text-preview">${review.text.substring(0, 120)}${review.text.length > 120 ? '...' : ''}</div>${review.text.length > 120 ? '<button class="read-more-btn" data-idx="' + index + '">Читать полностью →</button>' : ''}</div><div class="review-platform"><i class="fas fa-map-marker-alt"></i> ${review.platform}</div></div>`).join('');
+    
+    document.querySelectorAll('.read-more-btn').forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); openReviewModal(parseInt(btn.getAttribute('data-idx'))); }));
+    document.querySelectorAll('.review-card').forEach(card => card.addEventListener('click', (e) => { if (!e.target.classList.contains('read-more-btn')) openReviewModal(parseInt(card.getAttribute('data-review-index'))); }));
+  }
+  
+  function openReviewModal(index) { 
+    const r = reviews[index]; 
+    document.getElementById('modalAvatar').textContent = r.avatar; 
+    document.getElementById('modalName').textContent = r.name; 
+    document.getElementById('modalDate').textContent = r.date; 
+    document.getElementById('modalRating').innerHTML = renderStars(r.rating); 
+    document.getElementById('modalText').textContent = r.text; 
+    document.getElementById('modalPlatform').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${r.platform}`; 
+    document.getElementById('reviewModal').style.display = 'flex'; 
+  }
+  
+  function closeReviewModal() { document.getElementById('reviewModal').style.display = 'none'; }
+  
+  document.querySelector('.close-review-modal')?.addEventListener('click', closeReviewModal);
+  window.addEventListener('click', (e) => { if (e.target === document.getElementById('reviewModal')) closeReviewModal(); });
+  
+  loadReviews();
+</script>
+</body>
+</html>
